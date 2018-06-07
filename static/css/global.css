@@ -1,0 +1,195 @@
+/*********************/
+/*       RESET       */
+/*********************/
+body, ul, h1, h2, h3, h4, h5, h6 {
+    margin: 0;
+}
+ul {
+    padding: 0;
+}
+[aria-hidden="true"] {
+    display: none;
+}
+
+/*********************/
+/*       GLOBAL      */
+/*********************/
+html {
+    font: 62.5% 'Open sans', arial, sans-serif;
+    color: #222;
+    background: url('../img/forest.jpg') center/cover no-repeat;
+    min-width: 900px;
+}
+body {
+    display: grid;
+    grid-template: 160px 1fr / 1fr;
+    min-height: 100vh;
+    font-size: 1.4rem;
+}
+@keyframes last { /*animation qui fait clignoter le temps*/
+    from {
+        color: #fff;
+    }
+    to {
+        color: #e30045;
+    }
+}
+
+
+/*********************/
+/*       HEAD        */
+/*********************/
+.page-head {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 40px;
+    margin-right: 100px;
+    margin-left: 100px;
+    overflow: hidden;
+    background: #fff;
+    box-shadow: 0 0 2px rgba(0,0,0,.2);
+}
+.page-head h1 {
+    display: flex;
+    align-items: center;
+    align-self: stretch;
+    padding: 20px;
+    background: #1e00c1;
+    color: #fff;
+    font-weight: 100;
+}
+.page-head img {
+    margin-right: 10px;
+}
+.change-form, .set-time {
+    position: absolute;
+    right: 20px;
+    top: 0;
+    bottom: 0;
+    display: flex;
+    align-items: center;
+    transition: all ease-in .5s;
+}
+.change-form {
+    transform: translateY(100%);
+}
+.set-time {
+    transform: translateY(-100%);
+}
+.set-time>* {
+    margin: 0 5px;
+}
+.change-form.show, .set-time.show {
+    transform: translateY(0);
+}
+.field {
+    position: relative;
+    margin: 0 10px;
+    border: 1px solid #eee;
+    padding: 10px;
+    width: 80px;
+}
+.field::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    width: 0;
+    height: 2px;
+    background: #1e00c1;
+    transition: all ease-in .2s;
+}
+.field label {
+    position: absolute;
+    transition: all ease-in .2s;
+}
+.field input {
+    background: transparent;
+    border: 0;
+    width: 100%;
+}
+.field.hasVal label {
+    font-weight: bold;
+    transform: translate(-5px, -15px) scale(.8);
+}
+.field.hasVal::after {
+    width: calc(100% - 22px);
+}
+.field.hasVal {
+    border-color: transparent;
+    top: 0;
+}
+.change-btn {
+    border: 0;
+    padding: 12px 10px;
+    font-size: 1.4rem;
+    color: #fff;
+    border-radius: 2px;
+    cursor: pointer;
+    background: #e30045;
+    transition: all ease-in .2s;
+}
+.change-btn:hover {
+    transform: scale(1.1); /*Grossir les boutons quand on passe au dessus*/
+}
+.change-btn:focus, .change-btn:active {
+    background: #222;
+}
+.set-time button {
+    -webkit-appearence: none;
+    border: 0;
+    padding: 0;
+    font-size: 1.4rem;
+    color: #e30045;
+    text-decoration: underline;
+    background: transparent;
+    cursor: pointer;
+    transition: all ease-in .2s;
+}
+.set-time button:hover {
+    color: #222;
+}
+
+
+
+/*********************/
+/*      Page main    */
+/*********************/
+.page-main {
+    justify-self: center;
+    align-self: center;
+    text-align: center;
+}
+.counter-box {
+    display: none;
+    font-weight: 300;
+    font-size: 15rem;
+    color: #fff;
+    text-shadow: 0 0 1px rgba(0,0,0,.9);
+}
+.counter-btn {
+    display: none;
+}
+.last-time {
+    animation: last ease-in alternate both infinite .5s;
+}
+.btn {
+    -webkit-appearence: none;
+    border: 0;
+    padding: 20px;
+    border-radius: 50%;
+    background: #1e00c1;
+    cursor: pointer;
+    transition: all ease-in .2s;
+}
+.btn:hover {
+    transform: scale(1.1);
+}
+.btn:focus, .btn:active {
+    background: #222;
+}
+.counter-btn .btn {
+    margin: 0 10px;
+    padding: 10px;
+}
