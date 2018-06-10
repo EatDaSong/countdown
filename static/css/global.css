@@ -134,7 +134,7 @@ body {
     transform: scale(1.1); /*Grossir les boutons quand on passe au dessus*/
 }
 .change-btn:focus, .change-btn:active {
-    background: #222;
+    background: #e30045;
 }
 .set-time button {
     -webkit-appearence: none;
@@ -182,12 +182,18 @@ body {
     background: #1e00c1;
     cursor: pointer;
     transition: all ease-in .2s;
+    opacity: 0.7;
 }
+
+.btn:hover {
+    opacity: 1;
+}
+
 .btn:hover {
     transform: scale(1.1);
 }
 .btn:focus, .btn:active {
-    background: #222;
+    background: #e30045;
 }
 .counter-btn .btn {
     margin: 0 10px;
